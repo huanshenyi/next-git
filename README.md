@@ -18,3 +18,22 @@ yarn add @zeit/next-css
   ]
 }
 ```
+
+# ルーティング
+```text
+1. Link
+ import Link from "next/link";
+...
+    <Link href="/a">
+        <Button>Index</Button>
+    </Link>
+...
+
+2. Router
+
+import Router from "next/router";
+
+ function gotoTestA() {
+        Router.push("/a")
+    }
+```
