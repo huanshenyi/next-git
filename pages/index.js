@@ -22,10 +22,8 @@ export default () => {
     }
     return (
         <>
-        <Link href="/a?id=1" as="/a/1">
-            <Button>Index</Button>
-        </Link>
         <Button onClick={gotoTestA}>test a</Button>
+         <span>Index</span>
         </>
     )
 }
