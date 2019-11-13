@@ -1,15 +1,15 @@
-import App, { Container } from "next/app"
+import App from "next/app"
 import "antd/dist/antd.css"
 
 import Layout from "../components/Layout";
 
 class MyApp extends App {
     //グローバルのデータ取得
-    static async getInitialProps({ Component }){
+    static async getInitialProps({ Component, ctx }){
         //ページ変わるたびに呼び出される
-        let pageProps;
+        let pageProps = {};
         if (Component.getInitialProps){
-            pageProps = await Component.getInitialProps();
+            pageProps = await Component.getInitialProps(ctx);
         }
         return {
             pageProps
@@ -20,11 +20,9 @@ class MyApp extends App {
         //ここにある Componentは各ページ(pagesフォルダにあるファイル)のこと
         const { Component, pageProps } = this.props;
         return (
-            <Container>
                 <Layout>
                     <Component {...pageProps}/>
                 </Layout>
-            </Container>
         )
     }
 }

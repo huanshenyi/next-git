@@ -139,11 +139,11 @@ import Layout from "../components/Layout";
 
 class MyApp extends App {
     //グローバルのデータ取得
-    static async getInitialProps({ Component }){
+    static async getInitialProps({ Component, ctx }){
         //ページ変わるたびに呼び出される
         let pageProps;
         if (Component.getInitialProps){
-            pageProps = await Component.getInitialProps();
+            pageProps = await Component.getInitialProps(ctx);
         }
         return {
             pageProps
@@ -213,4 +213,11 @@ class MyDocument extends Document {
     }
 }
 export default MyDocument;
+```
+
+# Headのおすすめ定義
+
+```text
+各ページに
+import Head from "next/head";
 ```

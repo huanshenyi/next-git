@@ -1,9 +1,23 @@
 import { withRouter } from "next/router"
+import Head from "next/head";
+import Link from "next/link";
+
 const A = ({router, name}) => (
-    <h1>{router.query.id} {name}</h1>
+    <>
+        <Link href="#">
+           <a href="#">
+              A {router.query.id} {name}
+           </a>
+        </Link>
+        <style jsx>{`
+        a{
+        color:blue;
+        }
+        `}</style>
+    </>
 );
 
-A.getInitialProps = async ()=>{
+A.getInitialProps = async (ctx)=>{
  const promise = new Promise((resolve)=>{
      setTimeout(()=>{
          resolve({

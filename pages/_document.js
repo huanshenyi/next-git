@@ -12,10 +12,8 @@ class MyDocument extends Document {
         return(
             <Html>
                 <Head>
-                    <title>My App</title>
-                    <style>{`.test { color:red }`}</style>
                 </Head>
-                <body className="test">
+                <body>
                 <Main/>
                 <NextScript/>
                 </body>
